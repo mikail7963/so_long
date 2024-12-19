@@ -54,19 +54,7 @@ void	map_import_window(t_game *game, int x, int y)
 			else if (game->map[y][x] == 'E')
 				play_sprite_exit(game, x * 32, y * 32);
 			else if (game->map[y][x] == 'P')
-				play_sprit	{
-		game->enemy_x_y[e + 3] = rand() % 4;
-		if (game->enemy_x_y[e + 3] == 1)
-			enemy_move_a(game, e);	
-	}	{
-		game->enemy_x_y[e + 3] = rand() % 4;
-		if (game->enemy_x_y[e + 3] == 1)
-			enemy_move_a(game, e);	
-	}	{
-		game->enemy_x_y[e + 3] = rand() % 4;
-		if (game->enemy_x_y[e + 3] == 1)
-			enemy_move_a(game, e);	
-	}e_on_move(game);
+				play_sprite_on_move(game);
 			else if (game->map[y][x] == 'X')
 				import_enemy_way(game);
 			x++;
