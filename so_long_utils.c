@@ -17,9 +17,9 @@ void	dead_screen(t_game *game)
 	ft_printf("\033[1;37;41m\n");
 	ft_printf("*******************************************************\n");
 	ft_printf("*                                                     *\n");
+	ft_printf("*                                                     *\n");
 	ft_printf("*                  G A M E   O V E R                  *\n");
 	ft_printf("*                                                     *\n");
-	ft_printf("*           💀  Üzgünüm, kaybettiniz...  💀           *\n");
 	ft_printf("*                                                     *\n");
 	ft_printf("*******************************************************");
 	ft_printf("\033[0m\n");
@@ -31,9 +31,9 @@ void	finishscreen(t_game *game)
 	ft_printf("\033[1;32m");
 	ft_printf("*************************************************\n");
 	ft_printf("*                                               *\n");
-	ft_printf("              * \033[1;33mT E B R İ K L E R\033[1;32m *\n");
+	ft_printf("              * \033[1;33mCONGRATULATIONS\033[1;32m *\n");
 	ft_printf("*                                               *\n");
-	ft_printf("*     🎉🎉  Harika bir iş başardınız! 🎉🎉      *\n");
+	ft_printf("*     🎉🎉  You did a great job!! 🎉🎉      *\n");
 	ft_printf("*                                               *\n");
 	ft_printf("*************************************************\n");
 	ft_printf("\033[0m");
