@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikkayma <mikkayma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:31:00 by mikkayma          #+#    #+#             */
-/*   Updated: 2024/12/19 13:27:24 by mikkayma         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:02:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	wall_check(t_game *game)
 	}
 	i = 1;
 	while (i < game->map_y - 1)
-	{	
+	{
 		if (map[i][0] == '1' && map[i][game->map_x - 1] == '1'
 			&& (ft_strlen(map[i]) - 1) == game->map_x)
 			i++;
@@ -87,7 +87,7 @@ void	objects(char object, t_game *game, int map_c, int p_x)
 		game->error++;
 }
 
-void	map_linecheck(char *folder, t_game *game)
+int	map_linecheck(char *folder, t_game *game)
 {
 	int		y;
 	int		fd;
@@ -106,5 +106,25 @@ void	map_linecheck(char *folder, t_game *game)
 	}
 	free(line);
 	close(fd);
-	game->map_y = y;
+	return (y);
+}
+
+int	mapcheck(t_game *game)
+{
+	int		coin;
+
+	if (game->coin < 1)
+		handle_error("Wrong map,no coin", game, 1);
+	if (game->player_c != 1)
+		handle_error("error, the number of players is not 1", game, 1);
+	coin = game->coin;
+	game->map_clone = clonemap(game);
+	wall_check(game);
+	if (game->exit != 1)
+		handle_error("Wrong map, no exit", game, 1);
+	if (roadcheck(game->player_x, game->player_y, game->map_clone, game) == 0)
+		return (handle_error("error, exit or coin path is closed", game, 1));
+	free_clone(game->map_clone, game->map_y);
+	game->coin = coin;
+	return (0);
 }

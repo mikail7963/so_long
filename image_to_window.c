@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   image_to_window.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikkayma <mikkayma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 13:01:11 by mikkayma          #+#    #+#             */
-/*   Updated: 2024/12/19 11:48:29 by mikkayma         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:03:04 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	import_wall(t_game *game, int x, int y)
 			px, py);
 	else
 		mlx_put_image_to_window(game->mlx, game->win, game->wall, px, py);
+	game->first_frame = 0;
 }
 
 void	map_import_window(t_game *game, int x, int y)
@@ -44,8 +45,10 @@ void	map_import_window(t_game *game, int x, int y)
 		while (x < game->map_x)
 		{
 			if (game->map[y][x] == '1')
+			{
 				import_wall(game, x, y);
-			else if (game->map[y][x] == '0')
+			}
+			if (game->map[y][x] == '0')
 				mlx_put_image_to_window(game->mlx, game->win, game->floor,
 					x * 32, y * 32);
 			else if (game->map[y][x] == 'C')
@@ -62,5 +65,4 @@ void	map_import_window(t_game *game, int x, int y)
 		x = 0;
 		y++;
 	}
-	play_move_string(game);
 }

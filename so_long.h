@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikkayma <mikkayma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 11:36:18 by mikkayma          #+#    #+#             */
-/*   Updated: 2024/12/19 15:09:50 by mikkayma         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:06:38 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ typedef struct game
 	char	**map;
 	char	**map_clone;
 	char	*move_str;
-}t_game;
+}	t_game;
 
 void	move_w(t_game *game);
 void	move_a(t_game *game);
@@ -126,7 +126,7 @@ void	import_enemy_assets(t_game *game);
 void	import_exit_sprite(t_game *game, int w, int h);
 void	enemy_x_y_import(t_game *game, int e, int x, int y);
 void	map(char *folder, t_game *cordinat);
-void	map_linecheck(char *folder, t_game *game);
+int		map_linecheck(char *folder, t_game *game);
 void	objects(char object, t_game *game, int map_c, int p_x);
 int		all_enemy_move(t_game *game);
 int		key_check(int keycode, t_game *game);

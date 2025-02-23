@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   import_assets.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikkayma <mikkayma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 17:18:24 by mikkayma          #+#    #+#             */
-/*   Updated: 2024/12/19 14:26:23 by mikkayma         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:03:26 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	assets_import_other(t_game *game)
 			&w, &h);
 	if (game->wall == NULL)
 		handle_error("xpm error wall", game, 1);
-}	
+}
 
 void	assets_import_wall(t_game *game)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikkayma <mikkayma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:27:26 by mikkayma          #+#    #+#             */
-/*   Updated: 2024/12/19 14:41:27 by mikkayma         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:04:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	move_s(t_game *game)
 		game->map[game->player_y + 1][game->player_x] = 'P';
 		game->player_y++;
 		game->move += 1;
-	}	
+	}
 	game->hero_way = 2;
 	game->is_moving = 1;
 }

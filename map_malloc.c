@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_malloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikkayma <mikkayma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:25:56 by mikkayma          #+#    #+#             */
-/*   Updated: 2024/12/19 14:41:49 by mikkayma         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:24:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	map(char *folder, t_game *game)
 	game->enemy_c = 0;
 	if (folder[folder_check - 4] == '.' && folder[folder_check - 3] == 'b'
 		&& folder[folder_check - 2] == 'e' && folder[folder_check - 1] == 'r')
-		map_linecheck(folder, game);
+		game->map_y = map_linecheck(folder, game);
 	else
 		handle_error("error file extension is wrong", game, 0);
 	fullmap = malloc(sizeof(char *) * game->map_y);
