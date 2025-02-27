@@ -35,7 +35,6 @@ void	import_wall(t_game *game, int x, int y)
 			px, py);
 	else
 		mlx_put_image_to_window(game->mlx, game->win, game->wall, px, py);
-	game->first_frame = 0;
 }
 
 void	map_import_window(t_game *game, int x, int y)
